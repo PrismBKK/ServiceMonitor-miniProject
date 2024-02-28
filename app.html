@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class=" w-screen h-screen flex flex-col gap-20">
+        <header class="flex flex-col justify-between gap-10 pt-2 w-screen" id="navigation">
+            <div class=" flex flex-row  justify-around gap-10 pt-5 max-sm:flex-row-reverse">
+                <section class="hidden max-sm:inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.53988 2H7.91988C9.32988 2 10.4599 3.15 10.4599 4.561V7.97C10.4599 9.39 9.32988 10.53 7.91988 10.53H4.53988C3.13988 10.53 1.99988 9.39 1.99988 7.97V4.561C1.99988 3.15 3.13988 2 4.53988 2ZM4.53988 13.4697H7.91988C9.32988 13.4697 10.4599 14.6107 10.4599 16.0307V19.4397C10.4599 20.8497 9.32988 21.9997 7.91988 21.9997H4.53988C3.13988 21.9997 1.99988 20.8497 1.99988 19.4397V16.0307C1.99988 14.6107 3.13988 13.4697 4.53988 13.4697ZM19.46 2H16.08C14.67 2 13.54 3.15 13.54 4.561V7.97C13.54 9.39 14.67 10.53 16.08 10.53H19.46C20.86 10.53 22 9.39 22 7.97V4.561C22 3.15 20.86 2 19.46 2ZM16.08 13.4697H19.46C20.86 13.4697 22 14.6107 22 16.0307V19.4397C22 20.8497 20.86 21.9997 19.46 21.9997H16.08C14.67 21.9997 13.54 20.8497 13.54 19.4397V16.0307C13.54 14.6107 14.67 13.4697 16.08 13.4697Z" fill="#3B3B3B"/>
+                    </svg>
+                </section>
+                <p class="font-bold text-4xl flex flex-row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="2.5rem" viewBox="0 0 86 54" fill="none">
+                        <circle cx="44.417" cy="26.9987" r="26.115" fill="#FF7342"/>
+                        <rect y="26.999" width="85.5318" height="9.65328" rx="4.82664" transform="rotate(-15 0 26.999)" fill="#FF7342"/>
+                        <rect x="12.1051" y="23.7539" width="60.4674" height="9.65328" rx="4.82664" transform="rotate(-15 12.1051 23.7539)" fill="#FF4F11"/>
+                        <rect x="10.4581" y="41.1221" width="73.1181" height="9.65328" rx="4.82664" transform="rotate(-15 10.4581 41.1221)" fill="#FF7342"/>
+                        <rect x="10.4581" y="41.1221" width="73.1181" height="9.65328" rx="4.82664" transform="rotate(-15 10.4581 41.1221)" fill="#FF4F11"/>
+                    </svg>
+                    Hrr<span style="color:#FF7342">d</span>
+                </p>
+                <section class="flex flex-row justify-start gap-10 text-lg pt-2 max-sm:hidden">
+                    <a class="font-medium oragen-char" id="home">Home</a>
+                    <a class="font-medium">Feature</a>
+                    <a class="font-medium">Price</a>
+                    <a class="font-medium">Testmonial</a>
+                </section>
+                <section class="flex flex-row justify-stretch gap-4 text-lg max-sm:hidden">
+                    <button class="rounded  px-10 py-2 font-medium" id="register">Register</button>
+                    <button id="oragen-sqaure" class="rounded px-10 py-2  font-medium">Sign In</button>
+                </section>
+                
+            </div>
+            <div class="flex flex-row-reverse gap-96 justify-around max-sm:flex-col">
+                <div class="relative max-sm:left-1 max-sm:w-auto" id="dashboard">
+                    <section class="absolute z-20 w-screen top-24" id="num_Like">
+                        <img src="icon/Item-5.png" >
+                    </section>
+                    <section class="rounded-xl absolute flex flex-col z-0 left-5 top-24 p-2 " id="bg-graph">
+                        <p class="text-xl font-bold pt-5">Post Overview</p>
+                        <section class="flex flex-row gap-1 w-3/4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="175" height="85" viewBox="0 0 175 85" fill="none">
+                                <rect x="0.517014" y="0.898438" width="173.622" height="83.3386" rx="6.94489" fill="white"/>
+                                <rect x="76.0429" y="31.2817" width="48.6142" height="5.20867" rx="1.73622" fill="#B3BAC5"/>
+                                <rect opacity="0.1" x="76.0429" y="48.6445" width="83.3386" height="5.20867" rx="1.73622" fill="#5A7184"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M42.1863 63.4027C53.6929 63.4027 63.0209 54.0747 63.0209 42.5681C63.0209 31.0614 53.6929 21.7334 42.1863 21.7334C30.6796 21.7334 21.3516 31.0614 21.3516 42.5681C21.3516 54.0747 30.6796 63.4027 42.1863 63.4027Z" fill="#FAAD13"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="175" height="85" viewBox="0 0 175 85" fill="none">
+                                <rect x="0.842072" y="0.898438" width="173.622" height="83.3386" rx="6.94489" fill="white"/>
+                                <rect x="76.3676" y="31.2817" width="48.6142" height="5.20867" rx="1.73622" fill="#B3BAC5"/>
+                                <rect opacity="0.1" x="76.3676" y="48.6445" width="83.3386" height="5.20867" rx="1.73622" fill="#5A7184"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M42.5117 63.4027C54.0183 63.4027 63.3463 54.0747 63.3463 42.5681C63.3463 31.0614 54.0183 21.7334 42.5117 21.7334C31.005 21.7334 21.677 31.0614 21.677 42.5681C21.677 54.0747 31.005 63.4027 42.5117 63.4027Z" fill="#FFD167"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="174" height="85" viewBox="0 0 174 85" fill="none">
+                                <rect x="0.166901" y="0.898438" width="173.622" height="83.3386" rx="6.94489" fill="white"/>
+                                <rect x="75.693" y="31.2817" width="48.6142" height="5.20867" rx="1.73622" fill="#B3BAC5"/>
+                                <rect opacity="0.1" x="75.693" y="48.6445" width="83.3386" height="5.20867" rx="1.73622" fill="#5A7184"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M41.8364 63.4027C53.3431 63.4027 62.671 54.0747 62.671 42.5681C62.671 31.0614 53.3431 21.7334 41.8364 21.7334C30.3297 21.7334 21.0017 31.0614 21.0017 42.5681C21.0017 54.0747 30.3297 63.4027 41.8364 63.4027Z" fill="#37E0F5"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="175" height="85" viewBox="0 0 175 85" fill="none">
+                                <rect x="0.925541" y="1.33249" width="172.754" height="82.4705" rx="6.51083" fill="#F5F9FF" stroke="#B3BAC5" stroke-width="0.868111" stroke-dasharray="4.34 4.34"/>
+                            </svg>
+                        </section>
+                        <section class="flex flex-col">
+                            <section class="flex flex-row justify-evenly">
+                                <img src="icon/Item-1.png" class="w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="175" height="227" viewBox="0 0 175 227" fill="none">
+                                    <rect x="0.491486" y="0.939941" width="173.622" height="225.709" rx="6.94489" fill="white"/>
+                                    <rect x="21.3264" y="21.7739" width="41.6693" height="5.20867" rx="1.73622" fill="#B3BAC5"/>
+                                    <rect opacity="0.1" x="120.291" y="21.7739" width="32.9882" height="5.20867" rx="1.73622" fill="#5A7184"/>
+                                    <path d="M76.3985 73.2124C51.4181 78.2667 32.6119 100.345 32.6119 126.816C32.6119 157.021 57.0979 181.507 87.3029 181.507C102.276 181.507 115.845 175.49 125.721 165.741" stroke="#FFD167" stroke-width="8.68111" stroke-linecap="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M132.63 156.159C134.184 157.221 136.278 156.843 137.223 155.216C140.113 150.239 145.466 139.206 145.466 125.76C145.466 85.0959 105.067 72.4566 92.1155 69.4494C90.0455 68.9688 88.171 70.5655 88.171 72.6905V121.179C88.171 124.046 89.586 126.727 91.9523 128.345L132.63 156.159Z" fill="#FF7342"/>
+                                </svg>
+                            </section>
+                            <section class="flex flex-row justify-start h-32">
+                                <img src="icon/Item-2.png">
+                                <img src="icon/Item-3.png">
+                                <img src="icon/Item-4.png">
+                            </section>
+                        </section>
+                    </section>
+                    <section class="bg-white flex flex-col absolute z-10 w-36 items-center">
+                        <p class="text-lg font-medium p-4">Post Type</p>
+                        <button>
+                            <svg width="113" height="128" viewBox="0 0 113 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M36.228 98.4938C34.2173 97.5575 31.8282 98.4284 30.8918 100.439C29.9554 102.45 30.8263 104.839 32.837 105.775L36.228 98.4938ZM109.088 71.8122C109.737 69.6913 108.544 67.4456 106.424 66.7961C104.303 66.1467 102.057 67.3395 101.407 69.4603L109.088 71.8122ZM32.837 105.775C39.9325 109.08 47.8424 110.923 56.1718 110.923V102.89C49.0379 102.89 42.2833 101.314 36.228 98.4938L32.837 105.775ZM56.1718 110.923C81.092 110.923 102.155 94.4519 109.088 71.8122L101.407 69.4603C95.4791 88.8197 77.4634 102.89 56.1718 102.89V110.923Z" fill="#FF7342"/>
+                                <path d="M107.489 56.0011C107.489 27.4316 84.5132 4.27148 56.1716 4.27148C27.83 4.27148 4.85458 27.4316 4.85458 56.0011C4.85458 72.229 12.2674 86.7117 23.866 96.1959" stroke="#FFD167" stroke-width="7.43725" stroke-linecap="round"/>
+                                <g filter="url(#filter0_d_1_1685)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M56.6185 77.4553C68.448 77.4553 78.0377 67.8655 78.0377 56.036C78.0377 44.2064 68.448 34.6167 56.6185 34.6167C44.7889 34.6167 35.1992 44.2064 35.1992 56.036C35.1992 67.8655 44.7889 77.4553 56.6185 77.4553Z" fill="white"/>
+                                </g>
+                                <path d="M57.8728 60.2512C58.2807 60.2512 58.6258 59.9375 58.6258 59.4982V54.227H61.3555C61.9203 54.227 62.2027 53.5682 61.7948 53.1603L57.0257 48.3911C56.806 48.1715 56.3982 48.1715 56.1785 48.3911L51.4094 53.1603C51.0015 53.5682 51.2839 54.227 51.8487 54.227H54.6097V59.4982C54.6097 59.9375 54.9235 60.2512 55.3628 60.2512H57.8728ZM64.65 60.0002C64.65 59.5923 64.3049 59.2472 63.897 59.2472H59.6299V59.4982C59.6299 60.4709 58.8141 61.2552 57.8728 61.2552H55.3628C54.3901 61.2552 53.6057 60.4709 53.6057 59.4982V59.2472H49.3386C48.8993 59.2472 48.5856 59.5923 48.5856 60.0002V63.5143C48.5856 63.9536 48.8993 64.2673 49.3386 64.2673H63.897C64.3049 64.2673 64.65 63.9536 64.65 63.5143V60.0002ZM60.7594 62.7613C60.7594 63.1064 60.477 63.3888 60.1319 63.3888C59.7868 63.3888 59.5044 63.1064 59.5044 62.7613C59.5044 62.4162 59.7868 62.1338 60.1319 62.1338C60.477 62.1338 60.7594 62.4162 60.7594 62.7613ZM62.7675 62.7613C62.7675 63.1064 62.4851 63.3888 62.1399 63.3888C61.7948 63.3888 61.5124 63.1064 61.5124 62.7613C61.5124 62.4162 61.7948 62.1338 62.1399 62.1338C62.4851 62.1338 62.7675 62.4162 62.7675 62.7613Z" fill="#183B56"/>
+                                <defs>
+                                    <filter id="filter0_d_1_1685" x="0.244118" y="14.5361" width="112.749" height="112.749" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="14.8745"/>
+                                    <feGaussianBlur stdDeviation="17.4775"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1685"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1685" result="shape"/>
+                                </filter>
+                                </defs>
+                            </svg>
+                        </button>
+                        <section class="flex flex-row justify-around gap-1 pb-5 pl-3 ">
+                            <section class="flex flex-row gap-2 justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59111 6.06576C5.0698 6.06576 6.26852 4.86704 6.26852 3.38835C6.26852 1.90965 5.0698 0.710938 3.59111 0.710938C2.11241 0.710938 0.913696 1.90965 0.913696 3.38835C0.913696 4.86704 2.11241 6.06576 3.59111 6.06576Z" fill="#00B8D9"/>
+                                </svg>
+                                <p>Images</p>
+                            </section>
+                            <section class="flex flex-row gap-2 justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.34375 6.06576C4.82244 6.06576 6.02116 4.86704 6.02116 3.38835C6.02116 1.90965 4.82244 0.710938 3.34375 0.710938C1.86505 0.710938 0.666336 1.90965 0.666336 3.38835C0.666336 4.86704 1.86505 6.06576 3.34375 6.06576Z" fill="#1565D8"/>
+                                </svg>
+                                <p>Videos</p>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <section  class="flex flex-col gap-24 mt-32 max-sm:mt-64">
+                    <section class=" flex flex-col gap-12 ">
+                        <p class="text-7xl font-black">
+                            Best Platform<br>
+                            for Monitor<br>
+                            Work Flow
+                        </p>
+                        <button id="oragen-sqaure" class="w-52 h-16 text-white text-base">
+                            Get 15 Day Trial
+                        </button>
+                    </section>
+                    <section class="flex flex-row gap-20 max-sm:flex-col" id="logos">
+                        <section class="flex flex-row gap-20">
+                            <img src="icon\brand-04.png" class="w-20 h-8">
+                            <img src="icon\brand-01.png" class="w-20 h-8">
+                        </section>
+                        <section class="flex flex-row gap-20">
+                            <img src="icon\brand-06.png" class="w-20 h-8">
+                            <img src="icon\brand-05.png" class="w-20 h-8">
+                        </section>
+                    </section>
+                </section>
+                
+            </div>
+        </header>
+        <section id="feature">
+            <p class="text-5xl font-black text-center">
+                <mark id="oragen-sqaure" >Featur</mark>ed We<br>
+                    Provide for You
+            </p>
+            <section class="flex flex-row gap-2 justify-center max-sm:flex-col ">
+                <img src="icon/dashboard.png">
+                <img src="icon/Statistics.png">
+                <img src="icon/Easy Access.png">
+            </section>
+            <section class="flex flex-row gap-2 justify-center max-sm:flex-col">
+                <img src="icon/Collobration.png" >
+                <img src="icon/Total Control.png">
+            </section>
+        </section>
+        <section id="everything-you-need" class="flex flex-row gap-10 max-sm:flex-col">
+            <div class="relative">
+                <section id="Rectangle" class="absolute left-10"></section>
+                <section id="Circle" class="absolute top-96 left-80 max-sm:top-64 max-sm:left-56"></section>
+                <img src="icon/Group 1636.png" class="z-10 relative left-10 top-14">
+                <img src="icon/Item-5.png" class="z-40 absolute bottom-56 w-1/2 max-sm:bottom-80">
+                <section class="left-96 z-40 absolute w-1/2 bottom-1 bg-white flex flex-col gap-5 items-center justify-center p-2 max-sm:bottom-32">
+                    <section class="flex flex-row gap-3 items-center pt-4">
+                        <span id="dot"></span><span id="dot"></span><span id="dot"></span><span id="dot"></span>
+                    </section>
+                    <p class="text-2xl font-bold">Saturday, 8pm</p>
+                    <p class="text-base font-normal">Time to active in meeting</p>
+                    <section class="flex flex-row gap-6 justify-between p-2">
+                        <button class="text-base font-medium p-2 rounded-md" id="Schedule_Post">Schedule Post</button>
+                        <button class="text-base font-medium p-2 rounded-md" id="See_Insight">See Insight</button>
+                    </section>
+                </section>
+            </div>
+            <div class="flex flex-col gap-4 left-20 relative">
+                <p class="text-5xl font-black">
+                    Everything you
+                    need in one <mark id="oragen-sqaure">plac</mark>e
+                </p>
+                <ul class="space-y-4 list-none">
+                    <li id="List" class="flex flex-row justify-between items-center px-1">
+                        <p class="text-xl font-medium py-5 pl-7"><span class="pr-4">&bull;</span>Real-time date </p>
+                        <span class="text-xl pr-5">&rarr;</span>
+                    </li>
+                    <li id="List" class="flex flex-row justify-between items-center">
+                        <p class="text-xl font-medium py-5 pl-7"><span class="pr-4">&bull;</span>End-to-end encyption </p>
+                        <span class="text-xl pr-5">&rarr;</span>
+                    </li>
+                    <li id="List" class="flex flex-row justify-between items-center">
+                        <p class="text-xl font-medium py-5 pl-7"><span class="pr-4">&bull;</span>FDIC Insured </p>
+                        <span class="text-xl pr-5">&rarr;</span>
+                    </li>
+                    <li id="List" class="flex flex-row justify-between items-center">
+                        <p class="text-xl font-medium py-5 pl-7"><span class="pr-4">&bull;</span>REST API enabled </p>
+                        <span class="text-xl pr-5">&rarr;</span>
+                    </li>
+                </ul>
+                <button class="w-48 h-16 text-base font-bold text-white" id="oragen-sqaure">Try it Out Free</button>
+            </div>
+        </section>
+        <section>
+            <section id="Intrigate_price" class="py-10">
+                <section id="easy_to_intrigate" class="pt-40">
+                    <p class="text-center text-5xl font-black max-sm:text-2xl"> Easy to <mark id="oragen-sqaure">Intriga</mark>te 
+                        <br>Your Apps
+                    </p>
+                    <section class="flex flex-col gap-2 mt-16 items-center">
+                        <section class="flex flex-row gap-2  items-center max-sm:flex-col">
+                            <img src="icon/slack_icon.svg"id="box">
+                            <img src="icon/netflex_icon.svg" id="box">
+                            <img src="icon/google_icon_white.svg" id="box_organ">
+                            <img src="icon/fitbit_icon.svg" id="box">
+                            <img src="icon/airbnb_icon.svg" id="box">
+                        </section>
+                        <section class="flex flex-row gap-2 items-center max-sm:flex-col">
+                            <img src="icon/airbnb_icon.svg" id="box">
+                            <img src="icon/fitbit_icon.svg" id="box">
+                            <img src="icon/netflex_icon.svg" id="box">
+                            <img src="icon/slack_icon.svg" id="box">
+                            <img src="icon/google_icon.svg" id="box">
+                        </section>
+                    </section> 
+                </section>
+                <section class="mt-44">
+                    <div class="flex flex-col gap-10">
+                        <p class="text-center font-black text-5xl max-sm:text-2xl">Affordable <mark id="oragen-sqaure">Pricin</mark>g</p>
+                        <section class="flex gap-2 flex-row justify-center">
+                            <span class="font-medium">Monthly</span>
+                            <label id="switch">
+                                <input type="checkbox">
+                                <span id="slider"></span>
+                            </label>
+                            <span class="font-normal">Anually</span> 
+                        </section>
+                        <section class="flex flex-row max-sm:flex-col gap-8 justify-between pl-3">
+                            <section class="p-10">
+                                <p class="font-bold text-2xl">Free Plan</p>
+                                <p class="font-black text-5xl">$0 <sup class="font-normal text-base">/ month</sup></p>
+                                <ul class="pt-8 flex flex-col gap-3">
+                                    <li><span id="check" >&#10003</span> Access to editing all blocks</li>
+                                    <li><span id="check" >&#10003</span> Editing blocks together</li>
+                                    <li><span id="check" >&#10003</span> Access to all premium icons</li>
+                                    <li><span id="check" >&#10003</span> A dedicated domain</li>
+                                </ul>
+                                <button class="my-5 mx-5 w-2/3 h-16 text-white" id="yellow-sqaure">Try for Free</button>
+                            </section>
+
+                            <section class="bg-white p-10">
+                                <p class="font-bold text-2xl">Premium Plan</p>
+                                <p class="font-black text-5xl">$199 <sup class="font-normal text-base">/ year</sup></p>
+                                <ul class="pt-8 flex flex-col gap-3">
+                                    <li><span id="check" >&#10003</span> Access to editing all blocks</li>
+                                    <li><span id="check" >&#10003</span> Editing blocks together</li>
+                                    <li><span id="check" >&#10003</span> Access to all premium icons</li>
+                                    <li><span id="check" >&#10003</span> A dedicated domain</li>
+                                </ul>
+                                <button class="my-5 mx-5 w-2/3 h-16 text-white" id="oragen-sqaure">Try for Free</button>
+                            </section>
+
+                            <section class="p-10">
+                                <p class="font-bold text-2xl">Business Plan</p>
+                                <p class="font-black text-5xl">$299 <sup class="font-normal text-base">/ month</sup></p>
+                                <ul class="pt-8 flex flex-col gap-3">
+                                    <li><span id="check" >&#10003</span> Access to editing all blocks</li>
+                                    <li><span id="check" >&#10003</span> Editing blocks together</li>
+                                    <li><span id="check" >&#10003</span> Access to all premium icons</li>
+                                    <li><span id="check" >&#10003</span> A dedicated domain</li>
+                                </ul>
+                                <button class="my-5 mx-5 w-2/3 h-16 text-white" id="yellow-sqaure">Try for Free</button>
+                            </section>
+                            
+                        </section>
+                    </div>
+                </section>
+            </section>
+            <section id="Testimonial" class="m-5 flex flex-row-reverse gap-10 max-sm:flex-col justify-around">
+                <img src="icon/Group 1686.png">
+                <section class="flex flex-col justify-center gap-5 w-96">
+                    <p class="font-black text-3xl max-sm:text-2xl">“I’ve downloaded Hrrd from my Google Play  about 1 years ago. This make the prototype process so easy and faster. I feel this is the best apps for Prototyping use”</p>
+                    <p class="font-normal text-lg" id="despiction">— Ferdinand  - Co Founder of CocoPay</p>
+                    <section class="flex flex-row gap-9 justify-stretch items-center">
+                        <span class="text-4xl" style="color: #FF7342;">&larr;</span><span class="text-4xl" style="color: #3B3B3B;">&rarr;</span>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="CTA" class="p-24 mx-10 flex flex-col items-center gap-8">
+            <p class="text-center text-white font-black text-5xl max-sm:text-2xl">Start Your <mark class=" text-white" id="white-sqaure">15 Days Fr</mark>ee Trail!</p>
+            <p class="text-center text-white text-base font-normal max-sm:text-sm p-1">Distinctively supply accurate methods of empowerment before.</p>
+            <section class="flex flex-row gap-1 bg-white w-fit p-2 mt-3 items-center">
+                <input type="email" placeholder="Email"><button  id="oragen-sqaure" class="p-2 text-white rounded">Submit Now</button>
+            </section>
+        </section>
+        <footer class="px-10 py-20">
+            <section class="flex flex-row gap-44 max-sm:flex-col">
+                <section class="flex flex-col gap-7">
+                    <p class="font-bold text-4xl flex flex-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="2.5rem" viewBox="0 0 86 54" fill="none">
+                            <circle cx="44.417" cy="26.9987" r="26.115" fill="#FF7342"/>
+                            <rect y="26.999" width="85.5318" height="9.65328" rx="4.82664" transform="rotate(-15 0 26.999)" fill="#FF7342"/>
+                            <rect x="12.1051" y="23.7539" width="60.4674" height="9.65328" rx="4.82664" transform="rotate(-15 12.1051 23.7539)" fill="#FF4F11"/>
+                            <rect x="10.4581" y="41.1221" width="73.1181" height="9.65328" rx="4.82664" transform="rotate(-15 10.4581 41.1221)" fill="#FF7342"/>
+                            <rect x="10.4581" y="41.1221" width="73.1181" height="9.65328" rx="4.82664" transform="rotate(-15 10.4581 41.1221)" fill="#FF4F11"/>
+                        </svg>
+                        Hrr<span style="color:#FF7342;">d</span>
+                    </p>
+                    <p id="detail_footer">
+                        Professionally scale cross functional <br>human capital and extensive technology. 
+                    </p>
+                    <section class="max-sm:hidden">
+                        <section class="flex flex-row mt-10 gap-5 ">
+                            <img src="icon/google_icon.png">
+                            <img src="icon/X_Icon.png">
+                            <img src="icon/IG_Icon.png">
+                            <img src="icon/LinkIn_Icon.png">
+                        </section>
+                    </section>
+                </section>
+                <section class="flex flex-col gap-7">
+                    <p class="font-black text-xl">Services</p>
+                    <p id="detail_footer">Documentation</p>
+                    <p id="detail_footer">Design</p>
+                    <p id="detail_footer">Themes</p>
+                    <p id="detail_footer">Illustrations</p>
+                </section>
+                <section class="flex flex-col gap-7">
+                    <p class="font-black text-xl">Company</p>
+                    <p id="detail_footer">About</p>
+                    <p id="detail_footer">Terms</p>
+                    <p id="detail_footer">Privacy Policy</p>
+                    <p id="detail_footer">Careers</p>
+                </section>
+                <section class="flex flex-col gap-7">
+                    <p class="font-black text-xl">Job Info</p>
+                    <p id="detail_footer">Select</p>
+                    <p id="detail_footer">Services</p>
+                    <p id="detail_footer">Payment</p>
+                </section>
+                <section class="flex flex-col gap-7">
+                    <p class="font-black text-xl">Contact</p>
+                    <p id="detail_footer"><span class="font-medium">Call </span>: 971 5546 963</p>
+                    <p id="detail_footer"><span class="font-medium">Email </span>: example@gmail.com</p>
+                    <p id="detail_footer"><span class="font-medium">Address </span>: Dhaka, Bangladesh</p>
+                </section>
+            </section>
+            <section class="hidden max-sm:inline">
+                <section class="flex flex-row mt-10 gap-5">
+                    <img src="icon/google_icon.png">
+                    <img src="icon/X_Icon.png">
+                    <img src="icon/IG_Icon.png">
+                    <img src="icon/LinkIn_Icon.png">
+                </section>
+            </section>
+            <p>Copyright©chakri.All right reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
