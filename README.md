@@ -74,15 +74,13 @@ ServiceMonitor-miniProject/
 - Light Gray: `#B3BAC5`
 - Light Blue: `#5A7184`
 
-## 📧 Contact
+## 🚀 Installation
 
-- **Email**: example@gmail.com
-- **Phone**: 971 5546 963
-- **Address**: Dhaka, Bangladesh
-
-## 📄 License
-
-Copyright © chakri. All rights reserved.
+```bash
+git clone https://github.com/PrismBKK/ServiceMonitor-miniProject.git
+cd ServiceMonitor-miniProject
+start app.html
+```
 
 ## 🤝 Contributing
 
